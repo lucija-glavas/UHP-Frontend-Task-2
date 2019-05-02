@@ -1,0 +1,183 @@
+/* TYPOHRAPHY */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+@import "../modules/_fonts";
+
+/* -------------------------------------------------------------------------------- */
+
+//Base font
+
+body {
+  color: $color_secondary_text;
+  font-family: $font_sans_serif;
+  font-size: $font_xs;
+  font-weight: $regular;
+  font-style: normal;
+  line-height: $font_xs * $phi;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Links
+
+a {
+  color: $color_primary;
+  font-weight: $medium;
+  text-decoration: none;
+
+  &:active, &:focus, &:hover {
+    color: $color_primary_dark;
+    text-decoration: none;
+    @include transition(all, 0.35s, ease-in-out);
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Headings
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color_primary_text;
+  font-style: normal;
+  font-weight: $bold;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+
+  a {
+    color: inherit;
+    font-weight: inherit;
+  }
+
+}
+
+h1 {
+  font-size: $font_xl;
+  line-height: $font_xl + 10px;
+}
+
+h2 {
+  font-size: $font_lg;
+  line-height: $font_lg * $phi;
+}
+
+h3, h4 {
+  font-size: $font_md;
+  line-height: $font_md * $phi;
+}
+
+h4 {
+  font-weight: $medium;
+}
+
+.post_title h3 {
+  font-size: $font_md;
+  line-height: $font_md + 5px;
+}
+
+h5, h6 {
+  font-size: $font_sm;
+  line-height: $font_sm * $phi;
+  text-transform: uppercase;
+}
+
+.title_with_separator {
+
+  .separator {
+    width: 50px;
+    height: 3px;
+    background-color: $color_primary;
+    @include border_radius(5px);
+    margin: 0 auto;
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  h1, h2 {
+    font-size: $font_lg;
+    line-height: $font_lg * $phi;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  h1, h2 {
+    font-size: $font_md;
+    line-height: $font_md * $phi;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: $font_sm;
+    line-height: $font_sm * $phi;
+  }
+
+  .post_title h3 {
+    font-size: $font_sm;
+    line-height: $font_sm + 5px;
+  }
+
+}
+
+
+/* -------------------------------------------------------------------------------- */
+
+//Lists
+
+.list_circle {
+  list-style: none;
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  li {
+    color: $color_primary_text;
+    font-size: $font_sm;
+    line-height: $font_sm * $phi;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background-color: $color_primary;
+      @include border_radius(100%);
+      margin-right: 15px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Text
+
+p {
+  margin-bottom: 15px;
+}
+
+.text-justify {
+
+  h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Strong
+
+strong {
+  font-weight: $bold;
+}

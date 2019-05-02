@@ -1,0 +1,103 @@
+/* BUTTONS */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+//General
+
+button:focus {
+  @include box_shadow_none;
+  outline: none;
+}
+
+.btn {
+  height: 40px;
+  color: $color_white;
+  @include grad($color_primary_dark, $color_primary);
+  border: 0;
+  @include border_radius(10px);
+  font-size: $font_xs;
+  font-weight: $bold;
+  letter-spacing: 0;
+  line-height: 40px;
+  text-transform: none;
+  padding: 0 40px;
+  position: relative;
+
+  &.active, &:active, &.focus, &:focus, &:hover {
+    color: $color_white;
+    @include grad($color_primary_dark, $color_primary_dark);
+    @include box_shadow_none;
+    outline: none;
+    @include transition(all, 0.35s, ease-in-out);
+  }
+
+  &.btn-lg {
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    padding: 0 50px;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Outline buttons
+
+.btn-outline-primary, .btn-outline-light {
+  height: 36px;
+  background-color: transparent;
+  @include grad_off;
+  border-width: 2px;
+  border-style: solid;
+  line-height: 32px;
+
+  &.btn-lg {
+    height: 46px;
+    line-height: 42px;
+  }
+
+}
+
+.btn-outline-primary {
+  color: $color_primary;
+  border-color: $color_primary;
+
+  &.active, &:active, &.focus, &:focus, &:hover {
+    color: $color_white;
+    @include grad_off;
+    background-color: $color_primary_dark;
+    border-color: $color_primary_dark;
+  }
+
+}
+
+.btn-outline-light {
+  color: $color_white;
+  border-color: $color_white;
+
+  &.active, &:active, &.focus, &:focus, &:hover {
+    color: $color_primary;
+    @include grad_off;
+    background-color: $color_white;
+    border-color: $color_white;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Social buttons
+
+.btn-social {
+  width: 41px;
+  height: 41px;
+  @include border_radius(100%);
+  line-height: 38px;
+  padding: 0;
+  cursor: pointer;
+}

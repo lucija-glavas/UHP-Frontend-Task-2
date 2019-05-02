@@ -1,0 +1,169 @@
+/* GENERAL */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+//Body
+
+html, body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+
+  &::before {
+    content: "";
+    width: 63%;
+    height: 30%;
+    background-image: url(../img/bg/header-bg.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    @include bg_size(100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+}
+
+.wrapper {
+  z-index: 1000;
+  position: relative;
+  left: 0;
+
+  .wrapper_inner {
+    width: 100%;
+    overflow: hidden;
+  }
+
+}
+
+:focus {
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Container
+
+@media (min-width: 1400px) {
+
+  .container {
+    max-width: 1340px;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Colors
+
+.bg_whitish {
+  background-color: $color_whitish;
+}
+
+.color_primary {
+  color: $color_primary;
+}
+
+.color_primary_text {
+  color: $color_primary_text;
+}
+
+.color_secondary_text {
+  color: $color_secondary_text;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Page section
+
+.page_section {
+  padding: 120px 0;
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+
+  .page_section {
+    padding: 50px 0;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .page_section {
+    padding: 35px 0;
+  }
+
+}
+
+.border_bottom {
+  border-bottom: 5px solid $color_primary;
+}
+
+.home #showcase::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-image: url(../img/bg/section-bg.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  @include bg_size(contain);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Scrollbar
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	@include border-radius(0);
+  -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color_primary;
+  @include border-radius(0);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: $color_primary;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Text selection
+
+::selection {
+  color: $color_white;
+	background: $color_primary;
+}
+
+::-moz-selection {
+	color: $color_white;
+	background: $color_primary;
+}
+
+img::selection {
+  background: 0 0;
+}
+
+img::-moz-selection {
+	background: 0 0;
+}

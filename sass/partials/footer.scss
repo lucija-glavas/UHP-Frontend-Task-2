@@ -1,0 +1,115 @@
+/* ELEMENTS */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+//Page footer
+
+.page_footer {
+  width: 100%;
+  color: $color_white;
+  background-color: $color_primary_text;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+
+  .footer_top {
+    border-bottom: 2px solid $color_primary;
+
+    .footer_logo {
+      text-align: center;
+      padding: 50px 0;
+    }
+
+  }
+
+  .footer_middle {
+    padding: 60px 0;
+
+    .contact_box {
+      @include display_flex;
+      @include flex_direction(row);
+      @include box_direction(normal);
+      @include box_orient(horizontal);
+      @include flex_wrap(nowrap);
+      @include align_items(center);
+      @include justify_content(center);
+      @include box_pack(justify);
+
+      .icon {
+        color: $color_white;
+        font-size: $font_lg;
+        padding-right: 25px;
+      }
+
+      .contact {
+        color: $color_white;
+        margin-bottom: 0;
+      }
+
+      .contact_detail {
+        font-size: $font_xxs;
+        line-height: $font_xxs;
+      }
+
+    }
+
+  }
+
+  .footer_bottom {
+    border-top: 2px solid rgba($color_primary, 0.35);
+    padding: 20px 0;
+
+    .footer_bottom_left {
+      text-align: left;
+
+      p {
+        line-height: 41px;
+        margin-bottom: 0;
+      }
+
+    }
+
+    .footer_bottom_right {
+      text-align: right;
+    }
+
+    .socials {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .page_footer {
+
+    .footer_middle {
+
+      .contact_box {
+        margin-bottom: 15px;
+
+        .icon {
+          font-size: $font_sm;
+        }
+
+      }
+
+    }
+
+    .footer_bottom {
+
+      .footer_bottom_right {
+        text-align: left;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,106 @@
+/* NAVIGATION */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* -------------------------------------------------------------------------------- */
+
+//General
+
+header {
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 98;
+  position: relative;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Site header (logo + navbar)
+
+.site_header {
+  display: block;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+
+  .header_inner {
+    position: relative;
+
+    .header_holder {
+      width: 100%;
+      display: block;
+      position: relative;
+    }
+
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Master header
+
+.master_header {
+
+  .title_holder {
+    padding: 100px 0;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
+
+//Page header
+
+.page_header {
+  min-height: 250px;
+  background: $color_primary_dark;
+  text-align: center;
+  position: relative;
+
+  .title_holder {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .inner {
+      height: 100%;
+      margin: 0 auto;
+      display: table;
+      vertical-align: middle;
+      position: relative;
+
+      .title {
+        width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+
+        h1 {
+          color: $color_white;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .page_header {
+    min-height: 100px;
+  }
+
+}
+
+/* -------------------------------------------------------------------------------- */
